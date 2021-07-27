@@ -1,0 +1,13 @@
+{
+  "name": "scrape",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc index && node index.js"
+  },
+  "dependencies": {
+    "node-html-parser": "^4.1.2",
+    "puppeteer": "^10.1.0"
+  }
+}
