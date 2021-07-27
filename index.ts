@@ -21,6 +21,8 @@ const scrape = async () => {
 
     const dom = parse(data);
 
+    const region = dom.querySelector(".event__title--type").textContent;
+    const league = dom.querySelector(".event__title--name").textContent;
     const homeTeam = dom.querySelector(".event__participant--home").textContent;
     const awayTeam = dom.querySelector(".event__participant--away").textContent;
 
@@ -31,7 +33,7 @@ const scrape = async () => {
       away: score[1].textContent,
     };
 
-    const lastGame = `${homeTeam} ${scores.home} x ${scores.away} ${awayTeam}`;
+    const lastGame = `${region}-${league}: ${homeTeam} ${scores.home} x ${scores.away} ${awayTeam}`;
 
     return lastGame;
   } catch (error) {
